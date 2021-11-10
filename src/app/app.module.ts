@@ -16,6 +16,8 @@ import { TableComponent } from './components/utils/table/table.component';
 import { ImageComponent } from './components/utils/image/image.component';
 import { MapComponent } from './components/utils/map/map.component';
 import { TextareaComponent } from './components/utils/textarea/textarea.component';
+import { CommercialComponent } from './components/commerical/commercial/commercial.component';
+import { LoginComponent } from './components/commerical/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { TextareaComponent } from './components/utils/textarea/textarea.componen
     TableComponent,
     ImageComponent,
     MapComponent,
-    TextareaComponent
+    TextareaComponent,
+    CommercialComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
