@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog'; //To be able to use Angular Material Dialog
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { MapComponent } from './components/utils/map/map.component';
 import { TextareaComponent } from './components/utils/textarea/textarea.component';
 import { CommercialComponent } from './components/commerical/commercial/commercial.component';
 import { LoginComponent } from './components/commerical/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { LoginComponent } from './components/commerical/login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
