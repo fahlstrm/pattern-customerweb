@@ -1,15 +1,15 @@
-<div *ngIf="auth; else commercial">
+<div *ngIf="auth; else commercial" class="grid grid-wrap">
     <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
-    <nav>
+    <nav class="navbar">
         <a routerLink="/" routerLinkActive="active">Hem</a>
         <a routerLink="/history" routerLinkActive="active">Historik</a> 
         <a routerLink="/account" routerLinkActive="active">Konto</a> 
     </nav>
     <!-- The routed views render in the <router-outlet>-->
-    <router-outlet></router-outlet>
+    <router-outlet class="router-page"></router-outlet>
 </div>
 
-<ng-template #commercial>
+<ng-template #commercial class="grid grid-wrap">
     <app-commercial></app-commercial>
 
 </ng-template>

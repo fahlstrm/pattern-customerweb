@@ -1,0 +1,5 @@
+:host {
+    grid-column: 1/span 12;
+    grid-row: 1;
+    background-color: rgb(187, 180, 180);
+}

@@ -5,4 +5,7 @@
 ></app-button> --> 
 
 <!-- Button to open dialog, to show Login component -->
-<button mat-button (click)="openDialog()">Open dialog</button>
+<app-button mat-raised-button
+    (btnClick)= "openDialog()"
+    [btnText]="oauth"
+></app-button>

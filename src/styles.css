@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.grid-wrap {
+    padding: 2em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

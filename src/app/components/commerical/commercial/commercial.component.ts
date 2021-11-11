@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../utils/dialog/dialog.component';
 
 @Component({
   selector: 'app-commercial',
@@ -7,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommercialComponent implements OnInit {
   oauth: string = `Oauth` //Button text 
-  constructor() { }
+  myFooList = ['Some Item', 'Item Second', 'Other In Row', 'What to write', 'Blah To Do'];
+
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
 
-  openDialog() {
-    console.log("OpenAuth")
+  openDialog(): void {
+    this.dialog.open(DialogComponent, {
+      data: "test"
+    });
   }
 }
