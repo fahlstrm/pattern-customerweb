@@ -1,1 +1,10 @@
-<p>home works!</p>
+<!-- <div class="image-div">
+    <img [src]="src" [alt]="alt" class="outside"/>
+</div> -->
+<div class="image-div">
+    <mdb-carousel [animation]="'slide'">
+        <mdb-carousel-item *ngFor="let img of images">
+          <img class="d-block w-100" src={{img.src}} alt={{img.alt}}>
+        </mdb-carousel-item>
+    </mdb-carousel>
+</div>

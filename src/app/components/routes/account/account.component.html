@@ -1,4 +1,21 @@
-<p>account works!</p>
-<a mat-raised-button
+<div class="account-details">
+    <h3>Kontodetaljer</h3>
+    <p> {{username}} </p>
+    <p> {{credits}} </p>
+    <p> {{termsOfPayment}} </p>
+</div>
+
+<form [formGroup]="paymentTermsForm" (ngSubmit)="paymentTerms()" class="payment-form">
+    Formulärruta
+    <!-- <label for="title">Titel:</label>
+    <input [formControl]="title" type="text" id="title"> -->
+    <!-- <input class="submit" [disabled]="!paymentTerms.valid" type="submit" value="Bekräfta betalningsmetod"> -->
+
+</form>
+
+
+
+
+<!-- <a mat-raised-button
     [routerLink]="['/']"
->Klicka här</a>
+>Klicka här</a> -->
