@@ -3,6 +3,7 @@
     margin: -2rem;
     width: 100vw;
     height: 50vh;
+    position: relative;
 }
 
 .image-div img {
@@ -12,8 +13,20 @@
     min-height: 100%;
 }
 
+
+/*
+* Need to adjust contast against the background 
+* left, top and transform is to place the button to the left
+*/
 .img-button {
-    z-index: +999;
+    position: absolute;
+    display: flex;
+    align-content: center;
+    height: 5vh;
+    z-index: 1;
+    left: 25vw;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 

@@ -9,6 +9,7 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator'; //
 import {MatSort, MatSortModule} from '@angular/material/sort'; //sorting table
 import {MatTableDataSource, MatTableModule} from '@angular/material/table'; //table module
 import {MatButtonModule} from '@angular/material/button'; //button module
+import {MatIconModule} from '@angular/material/icon'; // icon module
 
 //Angular bootstarp for img-slider
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -62,6 +63,7 @@ import { HistoryTableComponent } from './components/tables/history-table/history
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatIconModule,
 
     MDBBootstrapModule.forRoot()
   ],
