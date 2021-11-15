@@ -8,16 +8,13 @@ div {
 }
 
 div:nth-child(1) {
-    background-color: rgb(190, 185, 184);
     grid-column: 1/span 4;
 }
 
 div:nth-child(2) {
-    background-color: rgb(190, 185, 184);
     grid-column: 5/span 4;
 }
 
 div:nth-child(3) {
-    background-color: rgb(190, 185, 184);
     grid-column: 9/span 4;
 }

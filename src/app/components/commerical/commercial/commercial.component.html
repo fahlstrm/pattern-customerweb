@@ -4,8 +4,32 @@
     (btnClick)= "openAuth()"
 ></app-button> --> 
 
-<!-- Button to open dialog, to show Login component -->
+<!-- Button to open dialog, to show Login component
 <app-button mat-raised-button
     (btnClick)= "openDialog()"
     [btnText]="oauth"
-></app-button>
+></app-button> -->
+
+<div class="image-div">
+    <mdb-carousel [animation]="'slide'">
+        <mdb-carousel-item *ngFor="let img of images">
+          <img class="d-block w-100" src={{img.src}} alt={{img.alt}}>
+          <app-button mat-raised-button class="img-button"
+            (btnClick)= "openDialog()"
+            [btnText]="oauth"
+            ></app-button>
+        </mdb-carousel-item>
+    </mdb-carousel>
+</div>
+
+<div>
+    En commerical div
+</div>
+
+<div>
+    Annan commerical div
+</div>
+
+<div>
+    Tredje commercial div
+</div>

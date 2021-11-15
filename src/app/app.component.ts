@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string ="test";
-  auth: boolean = true; //Adjusts commercial view or logged in view with nav in body-component
+  auth: boolean = false; //Adjusts commercial view or logged in view with nav in body-component
 }
