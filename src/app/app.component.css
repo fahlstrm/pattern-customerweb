@@ -1,3 +1,4 @@
-:host {
-    display: grid;
+.header-link {
+    text-decoration: none;
+    color: black;
 }

@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .grid-wrap {
@@ -14,15 +12,17 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
-    grid-template-rows: repeat(6, 1fr);
+    grid-auto-rows: minmax(2rem, auto);
 }
 
-a {
-    text-decoration: none;
+.image-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
-a:hover {
-    color: red;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* .outside {
+  margin: 0 calc((4em)/2);
+} */

@@ -1,13 +1,19 @@
 :host {
-    grid-column: 1/span 12;
-    grid-row: 2;
+    grid-column: 1/span 5;
+    grid-row: 2/span 3;
+    min-height: 60vh;
 }
 
-.navbar {
-    grid-column: 4/ span 6;
-    display: flex;
-    justify-content: space-between;
+nav a {
+    text-decoration: none;
+    color: black;
 }
+
+nav a:hover {
+    color: grey;
+}
+
+
 
 
 
