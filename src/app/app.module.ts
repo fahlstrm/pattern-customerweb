@@ -3,13 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-//Angular Material Modules 
-import { MatDialogModule } from '@angular/material/dialog';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator'; // for paginator in table (ability to switch pages)
-import {MatSort, MatSortModule} from '@angular/material/sort'; //sorting table
-import {MatTableDataSource, MatTableModule} from '@angular/material/table'; //table module
-import {MatButtonModule} from '@angular/material/button'; //button module
-import {MatIconModule} from '@angular/material/icon'; // icon module
+//Angular material module
+import { MaterialModule } from './modules/material/material.module';
 
 //Angular bootstarp for img-slider
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -52,19 +47,13 @@ import { HistoryTableComponent } from './components/tables/history-table/history
     HistoryTableComponent
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule, 
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatIconModule,
-
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
