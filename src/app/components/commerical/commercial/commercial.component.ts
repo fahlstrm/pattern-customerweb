@@ -18,6 +18,13 @@ export class CommercialComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Check if theres a array typeScript
+  images: any = [
+    {src: `assets/images/okai-vehicles-1-unsplash.jpg`, alt: `Scooter image / Okai` },
+    {src: `assets/images/okai-vehicles-3-unsplash.jpg`, alt: `Scooter image / Okai` },
+    {src: `assets/images/okai-vehicles-2-unsplash.jpg`, alt: `Scooter image / Okai` },
+  ]
+
 
   openDialog(): void {
     this.dialog.open(DialogComponent, {
