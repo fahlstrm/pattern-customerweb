@@ -19,7 +19,6 @@ import { BodyComponent } from './components/body/body.component';
 import { HomeComponent } from './components/routes/home/home.component';
 import { HistoryComponent } from './components/routes/history/history.component';
 import { AccountComponent } from './components/routes/account/account.component';
-import { ButtonComponent } from './components/utils/button/button.component';
 import { MapComponent } from './components/utils/map/map.component';
 import { TextareaComponent } from './components/utils/textarea/textarea.component';
 import { CommercialComponent } from './components/commerical/commercial/commercial.component';
@@ -38,7 +37,6 @@ import { HistoryTableComponent } from './components/tables/history-table/history
     HomeComponent,
     HistoryComponent,
     AccountComponent,
-    ButtonComponent,
     MapComponent,
     TextareaComponent,
     CommercialComponent,

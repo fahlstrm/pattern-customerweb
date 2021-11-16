@@ -8,7 +8,6 @@ import { DialogComponent } from '../../utils/dialog/dialog.component';
   styleUrls: ['./commercial.component.css']
 })
 export class CommercialComponent implements OnInit {
-  oauth: string = `Oauth` //Button text 
   myFooList = ['Some Item', 'Item Second', 'Other In Row', 'What to write', 'Blah To Do'];
 
   constructor(
