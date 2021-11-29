@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string ="test";
+  title: string ="customerweb";
   auth: boolean = false; //Adjusts commercial view or logged in view with nav in body-component
 }
