@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-login',
@@ -7,14 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   btnText = "GitHub";
+
+  loggedIn: boolean = false;
+  loggedInSubscription: Subscription;
+
+  loginEvent: any;
+  loginEventSubscription: Subscription;
   
-  constructor() { }
+  constructor(
+    public customerSerivce: CustomerService,
+  ) {
+    this.loggedInSubscription = this.customerSerivce.onSetLoggedIn().subscribe(loggedIn => {
+      this.loggedIn = loggedIn;
+    })
+
+    this.loginEventSubscription = this.customerSerivce.onSetLoginEvent().subscribe(loginEvent => {
+      this.loginEvent = loginEvent;
+    })
+   }
 
   ngOnInit(): void {
   }
 
-  login() {
-    console.log("Login")
+  loginClick() {
+    this.customerSerivce.loginCustomer();
+  }
+
+  checkClick() {
+    this.customerSerivce.checkClick();
   }
 
 }

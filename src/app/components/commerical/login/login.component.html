@@ -1,9 +1,20 @@
-<h3>
+<!-- <h3>
     Välj inloggning:
 </h3>
+
+
 
 <button mat-stroked-button
     (click)= "login()"
 >   
     <i class="fab fa-github"> Logga in med GitHub</i>
+</button> -->
+
+<button mat-raised-button (click)="loginClick()" *ngIf="!loggedIn" id="loginClick">
+    <i class="fab fa-github">  </i>
+    Logga in med GitHub
+</button>
+
+<button mat-raised-button (click)="checkClick()" *ngIf="loggedIn" id="checkClick">
+    Klicka för att använda appen
 </button>
