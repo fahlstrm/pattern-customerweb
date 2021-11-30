@@ -10,6 +10,8 @@ export class CustomerService {
   private _loggedIn: any = false;
   private _loginEvent: any = [];
   private customer = new Subject<any>(); 
+  private customerId = new Subject<any>(); 
+  private customerLog = new Subject<any>(); 
   private loggedIn = new Subject<any>(); 
   private loginEvent = new Subject<any>(); 
 
@@ -33,16 +35,17 @@ export class CustomerService {
     this.httpService.checkUser()
     .subscribe((res) => {
       if (res.user_type == "customer") {
-        this.setCustomer(res.id);
-        console.log(this.customer)
+        this.setCustomerId(res);
+        this.getCustomer(res.id);
         this.setLoginEvent("clicked")
       }
     })
   }
-    
-  setCustomer(customerId: any): any  {
+  
+  // Set customer
+  setCustomerId(customerId: any): any  {
     this._customerId = customerId;
-    this.customer.next(this._customerId)
+    this.customerId.next(this._customerId)
   }
 
   setLoginEvent(loginEvent: any): any  {
@@ -53,6 +56,10 @@ export class CustomerService {
   setLoggedin(loggedIn: any): any  {
     this._loggedIn = loggedIn;
     this.loggedIn.next(this._loggedIn)
+  }
+
+  onSetCustomerId(): Observable<any> {
+    return this.customerId.asObservable();
   }
 
   onSetCustomer(): Observable<any> {
@@ -67,14 +74,24 @@ export class CustomerService {
     return this.loggedIn.asObservable();
   }
 
-  getCustomerLog(): Observable<any> {
-    this.httpService.getCustomerLog(this.customer).subscribe(
+  getCustomer(id: any): Observable<any> {
+    this.httpService.getCustomer(id).subscribe(
       (data:any) => {
+        console.log(data)
         this.customer.next(data)
       }
     )
-    
     return this.customer.asObservable();
+  }
+
+  // Get log for specific customer
+  getCustomerLog(): Observable<any> {
+    this.httpService.getCustomerLog(this.customerId).subscribe(
+      (data:any) => {
+        this.customerLog.next(data)
+      }
+    )
+    return this.customerLog.asObservable();
   }
 
 }

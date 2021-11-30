@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { CustomerService } from 'src/app/services/customer.service';
 
 
 @Component({
@@ -15,10 +17,18 @@ export class AccountComponent implements OnInit {
   credits: string = `52`;
   termsOfPayment: string = `Prepaid`;
   
+  customer: any = [];
+  customerSubscription: Subscription;
 
   constructor(
     private formBuilder: FormBuilder,
-  ) { }
+    public customerSerivce: CustomerService,
+  ) { 
+    this.customerSubscription = this.customerSerivce.onSetCustomer().subscribe(customer => {
+      console.log("kunden", customer)
+      this.customer = customer;
+    })
+  }
 
   ngOnInit(): void {
   }

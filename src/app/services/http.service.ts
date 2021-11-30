@@ -10,9 +10,16 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
+  // Get specific customer 
+  getCustomer(id: any): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/users/${id}`);
+  }
+
+  // Get log for specific customer
   getCustomerLog(id: any): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/users/${id}/logs`);
   }
+
 
   // Redirects user to GitHub for login
   githubRedirect(): Observable<any> {
