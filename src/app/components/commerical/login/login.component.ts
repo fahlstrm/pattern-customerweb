@@ -13,20 +13,13 @@ export class LoginComponent implements OnInit {
   loggedIn: boolean = false;
   loggedInSubscription: Subscription;
 
-  loginEvent: any;
-  loginEventSubscription: Subscription;
-  
+
   constructor(
     public customerSerivce: CustomerService,
   ) {
     this.loggedInSubscription = this.customerSerivce.onSetLoggedIn().subscribe(loggedIn => {
       console.log("loggin sub", loggedIn)
       this.loggedIn = loggedIn;
-    })
-
-    this.loginEventSubscription = this.customerSerivce.onSetLoginEvent().subscribe(loginEvent => {
-      console.log("event", loginEvent)
-      this.loginEvent = loginEvent;
     })
    }
 

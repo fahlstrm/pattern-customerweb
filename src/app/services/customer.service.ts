@@ -29,6 +29,7 @@ export class CustomerService {
 
   // Continue to the app after logging in
   checkClick(): void {
+    console.log("i checkClick")
     this.httpService.checkUser()
     .subscribe((res) => {
       if (res.user_type == "customer") {
