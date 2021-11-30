@@ -34,6 +34,7 @@ export class CustomerService {
     .subscribe((res) => {
       if (res.user_type == "customer") {
         this.setCustomer(res.id);
+        console.log(this.customer)
         this.setLoginEvent("clicked")
       }
     })
