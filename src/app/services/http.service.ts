@@ -22,7 +22,6 @@ export class HttpService {
   // Checks if user is authorized
   checkUser(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/auth/github/check-usertype`, { withCredentials: true });
-
   }
 
 }

@@ -7,7 +7,7 @@ import { Subject, Subscription, Observable } from "rxjs";
 })
 export class CustomerService {
   private _customerId: any = [];
-  private _loggedIn: any = [];
+  private _loggedIn: any = false;
   private _loginEvent: any = [];
   private customer = new Subject<any>(); 
   private loggedIn = new Subject<any>(); 
