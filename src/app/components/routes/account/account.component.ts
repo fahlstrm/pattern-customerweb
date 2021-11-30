@@ -13,10 +13,6 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  username: string = `Testperson`;
-  credits: string = `52`;
-  termsOfPayment: string = `Prepaid`;
-  
   customer: any = [];
   customerSubscription: Subscription;
 

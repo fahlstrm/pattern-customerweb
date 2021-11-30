@@ -6,30 +6,18 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface HistoryTableItem {
-  id: number;
-  scoter: number;
-  startTime: string;
-  endTime: string;
-  startPosition: string;
-  endPosition: string;
-  travelCost: string;
-  parkingCost: string;
-  totalCost: number;
+  payment_terms: string;
+  scooter_id: number;
+  start_time: string;
+  end_time: string;
+  start_cost: string;
+  travel_cost: string;
+  parking_cost: string;
+  total_cost: number;
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: HistoryTableItem[] = [
-  {id: 1, scoter: 1, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 25.5},
-  {id: 2, scoter: 525, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 60.1},
-  {id: 3, scoter: 97, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 105},
-  {id: 4, scoter: 323, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 85.5},
-  {id: 5, scoter: 3, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 22},
-  {id: 6, scoter: 24, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 63.3},
-  {id: 7, scoter: 104, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 52},
-  {id: 8, scoter: 61, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 3},
-  {id: 9, scoter: 17, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 44},
-  {id: 10, scoter: 439, startTime:' ', endTime: '', startPosition: ' ', endPosition: ' ', travelCost: ' ', parkingCost: ' ', totalCost: 85.77},
-];
+const EXAMPLE_DATA: HistoryTableItem[] = [];
 
 /**
  * Data source for the HistoryTable view. This class should
@@ -94,9 +82,9 @@ export class HistoryTableDataSource extends DataSource<HistoryTableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'scoter': return compare(a.scoter, b.scoter, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        case 'totalCost': return compare(+a.totalCost, +b.totalCost, isAsc);
+        case 'scooter_id': return compare(+a.scooter_id, +b.scooter_id, isAsc);
+        case 'payment_terms': return compare(a.payment_terms, b.payment_terms, isAsc);
+        case 'total_cost': return compare(+a.total_cost, +b.total_cost, isAsc);
         default: return 0;
       }
     });

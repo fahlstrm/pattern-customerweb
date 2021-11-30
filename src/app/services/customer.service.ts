@@ -37,6 +37,7 @@ export class CustomerService {
       if (res.user_type == "customer") {
         this.setCustomerId(res);
         this.getCustomer(res.id);
+        this.getCustomerLog(res.id);
         this.setLoginEvent("clicked")
       }
     })
@@ -66,6 +67,10 @@ export class CustomerService {
     return this.customer.asObservable();
   }
 
+  onSetCustomerLog(): Observable<any> {
+    return this.customerLog.asObservable();
+  }
+
   onSetLoginEvent(): Observable<any> {
     return this.loginEvent.asObservable();
   }
@@ -85,9 +90,10 @@ export class CustomerService {
   }
 
   // Get log for specific customer
-  getCustomerLog(): Observable<any> {
-    this.httpService.getCustomerLog(this.customerId).subscribe(
+  getCustomerLog(id: any): Observable<any> {
+    this.httpService.getCustomerLog(id).subscribe(
       (data:any) => {
+        console.log(data)
         this.customerLog.next(data)
       }
     )
