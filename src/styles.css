@@ -23,6 +23,12 @@ body {
     position: relative;
 }
 
+.content-div {
+    padding: 2rem;
+    grid-column-start: auto;
+    grid-column-end: span 4;
+}
+
 /* .outside {
   margin: 0 calc((4em)/2);
 } */
