@@ -18,9 +18,9 @@ export class AccountComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public customerSerivce: CustomerService,
+    public customerService: CustomerService,
   ) { 
-    this.customerSubscription = this.customerSerivce.onSetCustomer().subscribe(customer => {
+    this.customerSubscription = this.customerService.onSetCustomer().subscribe(customer => {
       console.log("kunden", customer)
       this.customer = customer;
     })

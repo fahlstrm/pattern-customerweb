@@ -1,14 +1,24 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { CustomerService } from './customer.service';
+import { HttpService } from './http.service';
 
 describe('CustomerService', () => {
   let service: CustomerService;
+  let httpStub: any;
 
   beforeEach(() => {
+    httpStub = {
+      githubRedirect: () => of({"login_url":"test.url"}),
+      checkUser: () => of({"user_type":"customer","id":"1"}),
+      getCustomer: () => of(),
+      getCustomerLog: () => of()
+    }
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ]
+      imports: [ HttpClientTestingModule ],
+      providers: [{provide: HttpService, useValue: httpStub}]
     });
     service = TestBed.inject(CustomerService);
   });
@@ -16,4 +26,18 @@ describe('CustomerService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should call login', () => {
+    let spy = spyOn(service, 'setLoggedin')
+    service.loginCustomer();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should check user access', () => {
+    let spy = spyOn(service, 'setCustomerId')
+    service.checkClick();
+    expect(spy).toHaveBeenCalled();
+  });
+
+
 });
