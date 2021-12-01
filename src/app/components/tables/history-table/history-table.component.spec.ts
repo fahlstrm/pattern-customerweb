@@ -5,6 +5,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
 import { HistoryTableComponent } from './history-table.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('HistoryTableComponent', () => {
   let component: HistoryTableComponent;
@@ -18,6 +19,7 @@ describe('HistoryTableComponent', () => {
         MatPaginatorModule,
         MatSortModule,
         MatTableModule,
+        HttpClientTestingModule
       ]
     }).compileComponents();
   }));
