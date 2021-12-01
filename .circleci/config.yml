@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/my-project
     docker:
-      - image: cimg/base:2021.04
+      - image: 14.18.1-bullseye-browsers-legacy
     steps:
       - checkout
       - codecov/upload:
