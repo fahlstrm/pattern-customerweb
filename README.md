@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/fahlstrm/pattern-customerweb/tree/master.svg?style=svg)](https://circleci.com/gh/fahlstrm/pattern-customerweb/tree/master)
+[![codecov](https://codecov.io/gh/fahlstrm/pattern-customerweb/branch/master/graph/badge.svg?token=NQO8MCZ4SE)](https://codecov.io/gh/fahlstrm/pattern-customerweb)
 
 # Customerweb
 
