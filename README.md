@@ -1,6 +1,10 @@
 [![CircleCI](https://circleci.com/gh/fahlstrm/pattern-customerweb/tree/master.svg?style=svg)](https://circleci.com/gh/fahlstrm/pattern-customerweb/tree/master)
 [![codecov](https://codecov.io/gh/fahlstrm/pattern-customerweb/branch/master/graph/badge.svg?token=NQO8MCZ4SE)](https://codecov.io/gh/fahlstrm/pattern-customerweb)
 
+# Docker
+npm start: "ng serve --host 0.0.0.0 --port 4200",
+Docker run --rm -it -p 4200:80 customerweb-pattern:latest
+
 # Customerweb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
