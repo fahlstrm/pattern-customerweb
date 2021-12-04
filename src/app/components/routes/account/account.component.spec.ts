@@ -1,6 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
+import { CustomerService } from 'src/app/services/customer.service';
 
 import { AccountComponent } from './account.component';
 
