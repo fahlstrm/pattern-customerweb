@@ -21,7 +21,7 @@
 .mat-raised-button {
     position: absolute;
     display: flex;
-    align-content: center;
+    align-items: center;
     height: 5vh;
     z-index: 1;
     left: 25vw;
