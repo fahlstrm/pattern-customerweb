@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { CustomerService } from 'src/app/services/customer.service';
-
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-history',
@@ -12,13 +9,13 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
+  @HostBinding('class') classes = 'grid grid-wrap align-items';
 
-  constructor(
-    public customerSerivce: CustomerService,
-  ) { 
+  constructor( ) { 
   }
 
   ngOnInit(): void {
+    console.log("i history")
   }
 
 }

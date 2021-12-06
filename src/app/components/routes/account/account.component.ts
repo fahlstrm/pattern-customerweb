@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CustomerService } from 'src/app/services/customer.service';
@@ -7,12 +7,11 @@ import { CustomerService } from 'src/app/services/customer.service';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  host: {
-    class: `grid grid-wrap`
-  }, //Added to set grid for the router-outlet components
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
+  @HostBinding('class') classes = 'grid grid-wrap align-items';
+
   customer: any = [];
   customerSubscription: Subscription;
 

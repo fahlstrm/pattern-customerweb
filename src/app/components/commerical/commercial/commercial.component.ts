@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, HostBinding, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../utils/dialog/dialog.component';
 
@@ -8,6 +8,8 @@ import { DialogComponent } from '../../utils/dialog/dialog.component';
   styleUrls: ['./commercial.component.css']
 })
 export class CommercialComponent implements OnInit {
+  @HostBinding('class') classes = 'grid grid-wrap align-items';
+  
   myFooList = ['Some Item', 'Item Second', 'Other In Row', 'What to write', 'Blah To Do'];
 
   constructor(
