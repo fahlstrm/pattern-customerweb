@@ -35,9 +35,9 @@ export class CustomerService {
     this.httpService.checkUser()
     .subscribe((res) => {
       if (res.user_type == "customer") {
-        this.setCustomerId(res);
-        this.getCustomer(res.id);
-        this.getCustomerLog(res.id);
+        console.log("häntar kund", res)
+        this.setCustomerId(res.id);
+        this.getCustomer();
         this.setLoginEvent("clicked")
       }
     })
@@ -79,10 +79,9 @@ export class CustomerService {
     return this.loggedIn.asObservable();
   }
 
-  getCustomer(id: any): Observable<any> {
-    this.httpService.getCustomer(id).subscribe(
+  getCustomer(): Observable<any> {
+    this.httpService.getCustomer(this._customerId).subscribe(
       (data:any) => {
-        console.log(data)
         this.customer.next(data)
       }
     )
@@ -90,10 +89,9 @@ export class CustomerService {
   }
 
   // Get log for specific customer
-  getCustomerLog(id: any): Observable<any> {
-    this.httpService.getCustomerLog(id).subscribe(
+  getCustomerLog(): Observable<any> {
+    this.httpService.getCustomerLog(this._customerId).subscribe(
       (data:any) => {
-        console.log(data)
         this.customerLog.next(data)
       }
     )

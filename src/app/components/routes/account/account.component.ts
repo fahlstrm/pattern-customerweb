@@ -19,7 +19,7 @@ export class AccountComponent implements OnInit {
     private formBuilder: FormBuilder,
     public customerService: CustomerService,
   ) { 
-    this.customerSubscription = this.customerService.onSetCustomer().subscribe(customer => {
+    this.customerSubscription = this.customerService.getCustomer().subscribe(customer => {
       console.log("kunden", customer)
       this.customer = customer;
     })
