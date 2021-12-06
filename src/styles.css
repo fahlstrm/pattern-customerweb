@@ -4,6 +4,31 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+app-root {
+    display: grid;
+    grid-template-rows: 10vh 5vh auto 25vh;
+}
+
+.app-header-link, app-navbar, app-body, app-footer {
+    grid-column: 1/span 5;
+
+}
+
+/* Link sourrding header */ 
+.app-header-link {
+    grid-row: 1;
+    background-color: rgb(68, 75, 75);
+}
+
+app-body {
+    grid-row: 2 /span 2;
+    min-height: 60vh;
+}
+
+app-footer {
+    grid-row: 4;
+}
+
 .grid-wrap {
     padding: 2em;
 }

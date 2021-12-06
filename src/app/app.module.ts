@@ -26,7 +26,7 @@ import { LoginComponent } from './components/commerical/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/utils/dialog/dialog.component';
 import { HistoryTableComponent } from './components/tables/history-table/history-table.component';
-import { LoginDialogComponent } from './components/utils/dialogs/login-dialog/login-dialog.component';
+
 
 
 @NgModule({
@@ -43,8 +43,7 @@ import { LoginDialogComponent } from './components/utils/dialogs/login-dialog/lo
     CommercialComponent,
     LoginComponent,
     DialogComponent,
-    HistoryTableComponent,
-    LoginDialogComponent
+    HistoryTableComponent
   ],
   imports: [
     MaterialModule,
