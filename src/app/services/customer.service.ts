@@ -34,7 +34,7 @@ export class CustomerService {
     console.log("i checkClick")
     this.httpService.checkUser()
     .subscribe((res) => {
-      if (res.user_type == "customer") {
+      if (res.user_type == "customer" || res.user_type == "admin") {
         console.log("häntar kund", res)
         this.setCustomerId(res.id);
         this.getCustomer();
@@ -96,6 +96,10 @@ export class CustomerService {
       }
     )
     return this.customerLog.asObservable();
+  }
+
+  setTerms(user: any, terms: any, money: any): any {
+    this.httpService.setPaymentTerms(user, terms, money);
   }
 
 }

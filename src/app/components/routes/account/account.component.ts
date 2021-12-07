@@ -14,45 +14,36 @@ export class AccountComponent implements OnInit {
 
   customer: any = [];
   customerSubscription: Subscription;
+  isChecked!: boolean;
+  amount = 0;
 
   constructor(
     private formBuilder: FormBuilder,
     public customerService: CustomerService,
-  ) { 
+  ) {
     this.customerSubscription = this.customerService.getCustomer().subscribe(customer => {
       console.log("kunden", customer)
       this.customer = customer;
+
+      // OBS OBS anpassad för felaktig data från databasen, ändra när issuen är löst!
+      customer[0].payment_terms == "prepaid\r" ? this.isChecked = true : this.isChecked = false;
     })
   }
 
   ngOnInit(): void {
   }
 
-  //Place these above constructor or not?
-  prepaid = new FormControl('', [Validators.required]);
-  invoice = new FormControl('', [Validators.required]);
-
-  paymentTermsForm: FormGroup = this.formBuilder.group({
-    prepaid: this.prepaid,
-    invoice: this.invoice
-  });
-
-  //function to be called once paymentTermsForm is submitted
+  // Changes payment terms between prepaid and invoice
   paymentTerms() {
-    console.log("submitted");
+    this.isChecked ? this.customer[0].payment_terms = "prepaid" : this.customer[0].payment_terms = "invoice";
+    this.customerService.setTerms(this.customer[0].id, this.customer[0].payment_terms, this.customer[0].funds);
   }
 
-
-  //and these above constructor?
-  amount = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5)
-  ]);
-
-  depositForm: FormGroup = this.formBuilder.group({
-    amount: this.amount
-  });
-
-
-
+  // Adds amount to funds
+  saveAmount() {
+    this.customer[0].funds = parseFloat(this.customer[0].funds);
+    this.customer[0].funds += parseFloat(this.amount.toFixed(2));
+    this.customer[0].funds = this.customer[0].funds.toFixed(2);
+    this.customerService.setTerms(this.customer[0].id, this.customer[0].payment_terms, this.customer[0].funds);
+  }
 }

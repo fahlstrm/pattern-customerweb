@@ -31,4 +31,22 @@ export class HttpService {
     return this.http.get<any>(`${this.baseUrl}/auth/github/check-usertype`, { withCredentials: true });
   }
 
+  // Sets payment terms and funds for user
+  setPaymentTerms(user: any, terms: any, money: any): any {
+    const body = {
+      "payment_terms": terms,
+      "funds": money
+    }
+    return this.http.put<any>(`${this.baseUrl}/users/${user}`, body)
+    .subscribe({
+      next: res => {
+        return res;
+      },
+      error: error => {
+        console.error('There was an error!', error);
+        console.log("ERROR")
+      }
+    });
+  }
+
 }

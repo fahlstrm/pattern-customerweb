@@ -6,6 +6,7 @@ import {MatSort, MatSortModule} from '@angular/material/sort'; //sorting table
 import {MatTableDataSource, MatTableModule} from '@angular/material/table'; //table module
 import {MatButtonModule} from '@angular/material/button'; //button module
 import {MatIconModule} from '@angular/material/icon'; // icon module
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 
 const MaterialComponents = [
     MatButtonModule,
@@ -14,6 +15,7 @@ const MaterialComponents = [
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
+    MatSlideToggleModule
   ]
   
   @NgModule({
