@@ -27,9 +27,9 @@ export class HistoryTableComponent implements AfterViewInit {
   logs: any = [];
 
   constructor(
-    public customerSerivce: CustomerService,
+    public customerService: CustomerService,
   ) {
-    this.customerLogSubscription = this.customerSerivce.getCustomerLog().subscribe(resources => {
+    this.customerLogSubscription = this.customerService.getCustomerLog().subscribe(resources => {
       console.log("i table", resources)
       this.dataSource.data = resources; 
       this.dataSource.sort = this.sort;
