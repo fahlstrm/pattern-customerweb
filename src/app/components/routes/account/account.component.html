@@ -2,20 +2,12 @@
     <h3>Kontodetaljer</h3>
     <p> {{customer[0].username}} </p>
     <p> {{customer[0].funds}} </p>
-    <p> {{customer[0].payment_terms}} </p>
+    <mat-slide-toggle (change)="paymentTerms()" [(ngModel)]="isChecked">
+        <p>{{customer[0].payment_terms}}</p>
+    </mat-slide-toggle>
+    <form *ngIf="isChecked">
+        <label for="amount">Fyll på pengar!</label><br>
+        <input type="number" [(ngModel)]="amount" name="amount">
+        <button mat-raised-button (click)="saveAmount()">Fyll på</button>
+    </form>
 </div>
-
-<form [formGroup]="paymentTermsForm" (ngSubmit)="paymentTerms()" class="payment-form">
-    Formulärruta
-    <!-- <label for="title">Titel:</label>
-    <input [formControl]="title" type="text" id="title"> -->
-    <!-- <input class="submit" [disabled]="!paymentTerms.valid" type="submit" value="Bekräfta betalningsmetod"> -->
-
-</form>
-
-
-
-
-<!-- <a mat-raised-button
-    [routerLink]="['/']"
->Klicka här</a> -->
