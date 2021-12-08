@@ -63,3 +63,62 @@ app-footer {
 /* .outside {
   margin: 0 calc((4em)/2);
 } */
+
+
+.darkgrey-background {
+    background-color: #424242;
+}
+
+.darkgrey {
+    color: #424242;
+}
+
+
+.green-background {
+    background-color: #69f0ae;
+}
+
+.green-color {
+    color: #69f0ae;
+}
+
+.purple-background {
+    background-color: #7b1fa2;
+}
+
+.purple-color {
+    color: #7b1fa2;
+}
+
+.orange-background {
+    background-color: orange;
+}
+
+.orange-color {
+    color: orange;
+}
+
+.red-background {
+    background-color: lightcoral;
+}
+
+.red-color {
+    color: lightcoral
+}
+
+.yellow-background {
+    background-color: rgb(226, 226, 138);
+}
+
+.yellow-color {
+    color: rgb(226, 226, 138);
+}
+
+.grey-background {
+    background-color: grey;
+    color: white;
+}
+
+.grey-color {
+    color: grey; 
+}

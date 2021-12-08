@@ -5,40 +5,37 @@
     position: relative;
 }
 
-/* .image-div img {
-    object-fit: fill;
-    flex-shrink: 0;
-    max-width: 100%;
-    min-height: 80%;
-} */
 
-/* 
-mdb-carousel {
-    height: 100%;
-} */
-
-
-/*
-* Need to adjust contast against the background 
-* left, top and transform is to place the button to the left
-*/
 .mat-raised-button {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 5vh;
-    width: 15vw;
+    height: 7.5vh;
+    width: 20vw;
     z-index: 1;
-    left: 25vw;
+    left: 20vw;
     top: 50%;
     transform: translateY(-50%);
+    background-image: linear-gradient(to bottom right, #7b1fa2, #7b1fa2a2);
+}
+
+.mat-raised-button:hover {
+    color: #69f0ae;
 }
 
 
 div:nth-child(2), div:nth-child(3), div:nth-child(4) {
     grid-row: 2;
-    padding: 2rem;
-    height: 10vh;
-    background-color: rgb(187, 180, 180);
+    height: 12vh;
+    color: white;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
 }
+
+div p {
+    margin: 0;
+}
+
