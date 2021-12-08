@@ -23,14 +23,21 @@ export class HistoryTableComponent implements AfterViewInit {
 
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['payment_terms', 'scooter_id', 'start_time', 'end_time', 'start_cost', 'travel_cost', 'parking_cost', 'total_cost'];
+  displayedColumns = [
+    'payment_terms', 
+    'scooter_id', 
+    'start_time', 
+    'end_time', 
+    'start_cost', 
+    'travel_cost', 
+    'parking_cost', 
+    'total_cost'];
   logs: any = [];
 
   constructor(
     public customerService: CustomerService,
   ) {
     this.customerLogSubscription = this.customerService.getCustomerLog().subscribe(resources => {
-      console.log("i table", resources)
       this.dataSource.data = resources; 
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
@@ -38,6 +45,17 @@ export class HistoryTableComponent implements AfterViewInit {
     })
   }
 
+  refresh() {
+    this.dataSource.data.forEach(row => {
+      row.start_time = Date.parse(row.start_time);
+      row.end_time = Date.parse(row.end_time);
+    })
+  }
+
   ngAfterViewInit(): void {
+    this.dataSource.data.forEach(row => {
+      row.start_time = Date.parse(row.start_time);
+      row.end_time = Date.parse(row.end_time);
+    })
   }
 }
