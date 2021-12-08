@@ -16,7 +16,7 @@ export class BodyComponent implements OnInit {
   loggedIn: boolean = false;
   loggedInSubscription: Subscription;
 
-
+  @Input() auth: boolean = false;
   
   constructor(
     public customerSerivce: CustomerService

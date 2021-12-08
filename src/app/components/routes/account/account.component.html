@@ -1,10 +1,29 @@
-<div  *ngIf="customer.length != 0"class="account-details">
-    <h3>Kontodetaljer</h3>
-    <p> {{customer[0].username}} </p>
-    <p> {{customer[0].funds}} </p>
+<div *ngIf="customer.length != 0" class="darkgrey-background">
+    <h2>Kontodetaljer</h2>
+    <p> Användarnamn:
+        <span class="orange-color">
+            {{customer[0].username}} 
+        </span>
+    </p>
+    <p>
+        Tillgängligt:
+        <span class="green-color">
+            {{customer[0].funds}} 
+        </span>
+    </p>
+
+
+</div>
+
+<div class="darkgrey-background">  
+    <h2>
+        Nuvarande betalmetod 
+        <span class="yellow-color">
+            {{customer[0].payment_terms}}
+        </span>
+    </h2>
     <mat-slide-toggle (change)="paymentTerms()" [(ngModel)]="isChecked">
-        <p>{{customer[0].payment_terms}}</p>
-    </mat-slide-toggle>
+    </mat-slide-toggle>  
     <form *ngIf="isChecked">
         <label for="amount">Fyll på pengar!</label><br>
         <input type="number" [(ngModel)]="amount" name="amount">

@@ -1,12 +1,15 @@
-.account-details {
-    grid-column: 1 /span 4;
-    grid-row: 1;
-    border: 1px solid grey;
-    padding: 1rem;
-}
 
 .payment-form {
     grid-column: 5/span 8;
     grid-row: 1;
     border: 1px solid grey;
+}
+
+div {
+    height: 30vh;
+    grid-row: 1;
+    grid-column-start: auto;
+    grid-column: span 6;
+    padding: 2em;
+    color: white;
 }
