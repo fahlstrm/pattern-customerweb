@@ -12,6 +12,7 @@ describe('CommercialComponent', () => {
     data = {"test": "test"};
     await TestBed.configureTestingModule({
       declarations: [ CommercialComponent ],
+      imports: [MatDialogModule],
       providers: [ MatDialog, Overlay, {provide: MatDialogRef, useValue: data}]
     })
     .compileComponents();
@@ -23,7 +24,7 @@ describe('CommercialComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
