@@ -25,8 +25,7 @@ export class AccountComponent implements OnInit {
       console.log("kunden", customer)
       this.customer = customer;
 
-      // OBS OBS anpassad för felaktig data från databasen, ändra när issuen är löst!
-      customer[0].payment_terms == "prepaid\r" ? this.isChecked = true : this.isChecked = false;
+      customer[0].payment_terms == "prepaid" ? this.isChecked = true : this.isChecked = false;
     })
   }
 
