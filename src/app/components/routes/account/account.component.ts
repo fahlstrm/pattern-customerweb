@@ -10,9 +10,11 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  @HostBinding('class') classes = 'grid grid-wrap align-items';
+  @HostBinding('class') classes = 'grid grid-wrap align-items fill-body';
 
-  customer: any = [];
+  customer: any = [
+    {payment_terms: ""}
+  ];
   _paymentTerm: string = ``;
   customerSubscription: Subscription;
   isChecked!: boolean;
@@ -25,7 +27,7 @@ export class AccountComponent implements OnInit {
     this.customerSubscription = this.customerService.getCustomer().subscribe(customer => {
       console.log("kunden", customer)
       this.customer = customer;
-      this._paymentTerm = this.customer.payment_terms == "prepaid" ? "Faktura" : "Konto"
+      // this._paymentTerm = this.customer.payment_terms == "prepaid" ? "Faktura" : "Konto"
       customer[0].payment_terms == "prepaid" ? this.isChecked = true : this.isChecked = false;
     })
   }

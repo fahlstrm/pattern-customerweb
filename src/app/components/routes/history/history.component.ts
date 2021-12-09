@@ -9,7 +9,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  @HostBinding('class') classes = 'grid grid-wrap align-items';
+  @HostBinding('class') classes = 'grid grid-wrap align-items fill-body';
 
   constructor( ) { 
   }

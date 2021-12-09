@@ -23,7 +23,7 @@
         </span>
     </h2>
     <mat-slide-toggle (change)="paymentTerms()" [(ngModel)]="isChecked">
-        Ändra till: {{ _paymentTerm  }}
+        Ändra till: {{ isChecked ? "Faktura" : "Konto"  }}
     </mat-slide-toggle>  
     <form *ngIf="isChecked">
         <label for="amount">Fyll på pengar!</label><br>

@@ -7,7 +7,7 @@ import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @HostBinding('class') classes = 'grid grid-wrap align-items';
+  @HostBinding('class') classes = 'grid grid-wrap align-items fill-body';
 
   src: string = `assets/images/okai-vehicles-1-unsplash.jpg`;
   alt: string = "Scooter image / Okai"

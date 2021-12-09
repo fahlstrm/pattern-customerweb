@@ -24,7 +24,6 @@ app-body {
     grid-row: 2 /span 2;
     min-height: 65vh;
 }
-
 app-footer {
     grid-row: 4;
 }
@@ -45,6 +44,9 @@ app-footer {
     align-items: center;
 }
 
+.fill-body {
+    min-height: 45vh;
+}
 
 .image-div {
     display: flex;
@@ -58,6 +60,7 @@ app-footer {
     padding: 2rem;
     grid-column-start: auto;
     grid-column-end: span 4;
+    border-radius: 3px;
 }
 
 /* .outside {
