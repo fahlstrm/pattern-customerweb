@@ -1,7 +1,7 @@
 <div *ngIf="loggedIn; else commercial" class="">
     <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
     <nav class="grid grid-wrap">
-        <a routerLink="/" routerLinkActive="active">Hem</a>
+        <a routerLink="/" routerLinkActiveOptions="{ exact: true }">Hem</a>
         <a routerLink="/history" routerLinkActive="active">Historik</a> 
         <a routerLink="/account" routerLinkActive="active">Konto</a> 
     </nav>
