@@ -42,4 +42,10 @@ describe('HttpService', () => {
     const req = httpTestingController.expectOne(service.baseUrl + "/users/1/logs");
     expect(req.request.method).toEqual('GET');
   });
+
+  it('should set payment terms', () => {
+    service.setPaymentTerms(1, "invoice", 200);
+    const req = httpTestingController.expectOne(service.baseUrl + "/users/1");
+    expect(req.request.method).toEqual('PUT');
+  });
 });
