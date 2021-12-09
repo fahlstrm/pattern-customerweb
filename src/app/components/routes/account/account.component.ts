@@ -13,6 +13,7 @@ export class AccountComponent implements OnInit {
   @HostBinding('class') classes = 'grid grid-wrap align-items';
 
   customer: any = [];
+  _paymentTerm: string = ``;
   customerSubscription: Subscription;
   isChecked!: boolean;
   amount = 0;
@@ -24,7 +25,7 @@ export class AccountComponent implements OnInit {
     this.customerSubscription = this.customerService.getCustomer().subscribe(customer => {
       console.log("kunden", customer)
       this.customer = customer;
-
+      this._paymentTerm = this.customer.payment_terms == "prepaid" ? "Faktura" : "Konto"
       customer[0].payment_terms == "prepaid" ? this.isChecked = true : this.isChecked = false;
     })
   }
