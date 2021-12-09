@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { CustomerService } from 'src/app/services/customer.service';
-
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-body',
@@ -19,9 +19,10 @@ export class BodyComponent implements OnInit {
   @Input() auth: boolean = false;
   
   constructor(
-    public customerSerivce: CustomerService
+    public customerService: CustomerService,
+    public httpService: HttpService
   ) { 
-    this.loggedInSubscription = this.customerSerivce.onSetLoggedIn().subscribe(loggedIn => {
+    this.loggedInSubscription = this.customerService.onSetLoggedIn().subscribe(loggedIn => {
       console.log("loggin sub", loggedIn)
       this.loggedIn = loggedIn;
     })
@@ -33,6 +34,24 @@ export class BodyComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // Checks if user has already logged in when page is reloaded
+    this.checkClick()
+
   }
 
+  // Checks if user is authorized
+  checkClick(): void {
+    this.httpService.checkUser()
+    .subscribe((res: any) => {
+      if (res.user_type == "customer") {
+        this.customerService.setCustomerId(res.id);
+        this.loggedIn = true;
+      }
+    });
+  }
+
+  // Changes variable to show new screen when login has been initiated
+  loginClick(): void {
+    this.loggedIn = !this.loggedIn;
+  }
 }
