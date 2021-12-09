@@ -6,10 +6,15 @@
 }
 
 div {
-    height: 30vh;
+    height: 32vh;
     grid-row: 1;
     grid-column-start: auto;
     grid-column: span 6;
     padding: 2em;
     color: white;
+}
+
+button {
+    margin: 1em;
+    background-image: linear-gradient(to bottom right, #7b1fa2, #7b1fa2a2);
 }

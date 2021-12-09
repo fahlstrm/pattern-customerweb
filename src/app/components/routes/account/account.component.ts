@@ -15,7 +15,6 @@ export class AccountComponent implements OnInit {
   customer: any = [
     {payment_terms: ""}
   ];
-  _paymentTerm: string = ``;
   customerSubscription: Subscription;
   isChecked!: boolean;
   amount = 0;
@@ -27,7 +26,6 @@ export class AccountComponent implements OnInit {
     this.customerSubscription = this.customerService.getCustomer().subscribe(customer => {
       console.log("kunden", customer)
       this.customer = customer;
-      // this._paymentTerm = this.customer.payment_terms == "prepaid" ? "Faktura" : "Konto"
       customer[0].payment_terms == "prepaid" ? this.isChecked = true : this.isChecked = false;
     })
   }
@@ -37,7 +35,7 @@ export class AccountComponent implements OnInit {
 
   // Changes payment terms between prepaid and invoice
   paymentTerms() {
-    this.isChecked ? this.customer[0].payment_terms = "prepaid" : this.customer[0].payment_terms = "invoice";
+    this.isChecked ? this.customer[0].payment_terms = "Konto" : this.customer[0].payment_terms = "Faktura";
     this.customerService.setTerms(this.customer[0].id, this.customer[0].payment_terms, this.customer[0].funds);
   }
 
@@ -47,5 +45,12 @@ export class AccountComponent implements OnInit {
     this.customer[0].funds += parseFloat(this.amount.toFixed(2));
     this.customer[0].funds = this.customer[0].funds.toFixed(2);
     this.customerService.setTerms(this.customer[0].id, this.customer[0].payment_terms, this.customer[0].funds);
+    this.addFundsForm.reset();
   }
+
+  funds = new FormControl('', [Validators.required]);
+
+  addFundsForm: FormGroup = this.formBuilder.group({
+    funds: this.funds
+  });
 }

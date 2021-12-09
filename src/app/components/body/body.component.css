@@ -2,12 +2,13 @@
     padding-bottom: 5vh;
 }    
 
-nav a {
+a {
+    font-size: 1.1em;
+    color: #2c2c2c;
+    width: max-content;
     text-decoration: none;
-    color: black;
 }
 
-nav a:hover {
-    color: grey;
+.active {
+    color: #7b1fa2;
 }
-

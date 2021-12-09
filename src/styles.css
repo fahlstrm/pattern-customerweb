@@ -63,10 +63,13 @@ app-footer {
     border-radius: 3px;
 }
 
-/* .outside {
-  margin: 0 calc((4em)/2);
-} */
+.nav-link:hover {
+    color: orange;
+}
 
+h2 {
+    margin: 0; 
+}
 
 .darkgrey-background {
     background-color: #424242;

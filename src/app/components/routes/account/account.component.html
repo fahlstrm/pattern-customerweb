@@ -1,5 +1,7 @@
 <div *ngIf="customer.length != 0" class="darkgrey-background">
     <h2>Kontodetaljer</h2>
+    <br><br>
+
     <p> Användarnamn:
         <span class="orange-color">
             {{customer[0].username}} 
@@ -19,15 +21,21 @@
     <h2>
         Nuvarande betalmetod 
         <span class="yellow-color">
-            {{customer[0].payment_terms}}
+            {{customer[0].payment_terms == "prepaid" ? "Konto" : "Faktura"}}
         </span>
     </h2>
+    <br>
     <mat-slide-toggle (change)="paymentTerms()" [(ngModel)]="isChecked">
         Ändra till: {{ isChecked ? "Faktura" : "Konto"  }}
-    </mat-slide-toggle>  
-    <form *ngIf="isChecked">
+    </mat-slide-toggle>
+    <br>  
+    <form [formGroup]="addFundsForm" *ngIf="isChecked">
+        <br>
         <label for="amount">Fyll på pengar!</label><br>
-        <input type="number" [(ngModel)]="amount" name="amount">
-        <button mat-raised-button (click)="saveAmount()">Fyll på</button>
+        <input [formControl]="funds" type="number" step="10" min="10" [(ngModel)]="amount" name="amount">
+        <button mat-raised-button (click)="saveAmount()"  [disabled]="!addFundsForm.valid">Fyll på</button>
+        <span *ngIf="funds.invalid && funds.touched">
+            <p>Du måste ange ett värde! </p>
+        </span>
     </form>
 </div>
