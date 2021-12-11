@@ -1,11 +1,24 @@
 :host {
     height: 100%;
     display: flex;
-    padding-left: 2em;
+    padding: 0 2em;
 }
 
 img {
     height: 50%;
     align-self:center; 
     z-index: 3;
+    -webkit-filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.3));
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.3));
+}
+
+
+.round {
+    height: 6vh;
+    width: 6vh;
+    margin-right: 2em;
+}
+
+.icon-display {
+    transform: scale(1.5);
 }

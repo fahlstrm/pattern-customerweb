@@ -22,7 +22,7 @@ export class BodyComponent implements OnInit {
     public customerService: CustomerService,
     public httpService: HttpService
   ) { 
-    this.loggedInSubscription = this.customerService.onSetLoggedIn().subscribe(loggedIn => {
+    this.loggedInSubscription = this.customerService.onSetLoginEvent().subscribe(loggedIn => {
       console.log("loggin sub", loggedIn)
       this.loggedIn = loggedIn;
     })
@@ -35,15 +35,18 @@ export class BodyComponent implements OnInit {
 
   ngOnInit(): void {
     // Checks if user has already logged in when page is reloaded
-    this.checkClick()
+    this.checkClick();
 
   }
 
   // Checks if user is authorized
   checkClick(): void {
+    console.log("i check Click")
     this.httpService.checkUser()
     .subscribe((res: any) => {
-      if (res.user_type == "customer") {
+      console.log(res)
+      if (res.user_type == "admin" || res.user_type == "customer") {
+        console.log("test")
         this.customerService.setCustomerId(res.id);
         this.loggedIn = true;
       }
