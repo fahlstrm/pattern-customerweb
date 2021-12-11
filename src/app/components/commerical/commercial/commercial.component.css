@@ -1,6 +1,7 @@
 .image-div {
     margin: 0 -2rem;
-    height: 40vh;
+    height: 38vh;
+    width: 100vw;
     grid-column: 1/span 12;
     position: relative;
 }
