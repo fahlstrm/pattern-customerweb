@@ -12,7 +12,7 @@ describe('BodyComponent', () => {
 
   beforeEach(async () => {
     customerStub = {
-      onSetLoggedIn: () => of(true)
+      onSetLoginEvent: () => of(true)
     }
     await TestBed.configureTestingModule({
       declarations: [ BodyComponent ],
