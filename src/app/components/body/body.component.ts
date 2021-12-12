@@ -46,7 +46,6 @@ export class BodyComponent implements OnInit {
     .subscribe((res: any) => {
       console.log(res)
       if (res.user_type == "admin" || res.user_type == "customer") {
-        console.log("test")
         this.customerService.setCustomerId(res.id);
         this.loggedIn = true;
       }

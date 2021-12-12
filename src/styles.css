@@ -63,6 +63,11 @@ app-footer {
     border-radius: 3px;
 }
 
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
 .nav-link:hover {
     color: orange;
 }

@@ -4,12 +4,20 @@
 }
 
 div p {
-    padding: 2em;
+    padding: 1em;
     color: white;
 }
 
 img {
     width: 100%;
-    max-height: 20vh;
+    height: 20vh;
     object-fit: cover;
+}
+
+.text-div {
+    height: 10vh;
+}
+
+p {
+    margin: 0;
 }

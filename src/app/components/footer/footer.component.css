@@ -3,10 +3,11 @@
     padding-top: 50px;
     -webkit-clip-path: polygon(0 0,100% 20%,100% 100%,0% 100%);
     clip-path: polygon(0 0,100% 20%,100% 100%,0% 100%); 
+    background: linear-gradient(to bottom left, #5c5c5c, #424242, #3f3f3f, #333333);
 }
 
-i, a  {
-    color: white;
+a  {
+    color: rgba(211, 211, 211, 0.856);;
     text-decoration: none;
 }
 
@@ -28,4 +29,20 @@ p {
     font-size: 0.8em;
     margin: 0;
     line-height: 1.35em;
+}
+
+
+.bottom-div {
+    grid-column: 1/span 12;
+    grid-row: 2;
+    margin-top: 1em;
+    border-top: 0.5px solid rgba(211, 211, 211, 0.61);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bottom-div p {
+    color: rgba(211, 211, 211, 0.856);
+    font-size: 0.7em;
+    margin-top: 1em;
 }

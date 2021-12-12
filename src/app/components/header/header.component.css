@@ -2,6 +2,7 @@
     height: 100%;
     display: flex;
     padding: 0 2em;
+    background: linear-gradient(to top right, grey, grey, #696969);
 }
 
 img {
