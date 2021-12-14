@@ -10,7 +10,7 @@ img {
     align-self:center; 
     z-index: 3;
     -webkit-filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.3));
-    filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.3));
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.3));    
 }
 
 
