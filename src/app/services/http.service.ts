@@ -12,12 +12,12 @@ export class HttpService {
 
   // Get specific customer 
   getCustomer(id: any): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/users/${id}`);
+    return this.http.get<any>(`${this.baseUrl}/users/${id}`, { withCredentials: true });
   }
 
   // Get log for specific customer
   getCustomerLog(id: any): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/users/${id}/logs`);
+    return this.http.get<any>(`${this.baseUrl}/users/${id}/logs`, { withCredentials: true });
   }
 
 
@@ -37,7 +37,7 @@ export class HttpService {
       "payment_terms": terms,
       "funds": money
     }
-    return this.http.put<any>(`${this.baseUrl}/users/${user}`, body)
+    return this.http.put<any>(`${this.baseUrl}/users/${user}`, body, { withCredentials: true })
     .subscribe({
       next: res => {
         return res;
