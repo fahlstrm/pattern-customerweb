@@ -6,7 +6,7 @@
 }
 
 div {
-    height: 32vh;
+    height: 33vh;
     grid-row: 1;
     grid-column-start: auto;
     grid-column: span 6;

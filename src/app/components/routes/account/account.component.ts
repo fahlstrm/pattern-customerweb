@@ -35,7 +35,8 @@ export class AccountComponent implements OnInit {
 
   // Changes payment terms between prepaid and invoice
   paymentTerms() {
-    this.isChecked ? this.customer[0].payment_terms = "Konto" : this.customer[0].payment_terms = "Faktura";
+    console.log(this.customer[0])
+    this.isChecked ? this.customer[0].payment_terms = "prepaid" : this.customer[0].payment_terms = "invoice";
     this.customerService.setTerms(this.customer[0].id, this.customer[0].payment_terms, this.customer[0].funds);
   }
 
